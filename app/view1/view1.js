@@ -12,11 +12,59 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 .controller('View1Ctrl', function($scope, $http) {
-	$scope.firstName = "Jonathan Wen";
 	$http.get("data/interview.json").then(function(res) {
-		arr = parse(res.data);
-		applyd3();
+		$scope.opData = parse(res.data);
+		console.log('b');
+		// applyd3();
 	});
+})
+
+.directive("operationChart", function() {
+	function link(scope, elem, attr) {
+		console.log('a');
+		function type(d) {
+			d.average = +d.average; // convert from string to number
+			return d;
+		}
+
+		var arr = scope.data;
+		console.log(attr);
+		console.log(elem);
+		console.log(scope);
+		console.log(scope.hi);
+
+
+		var width = 5000,
+		    height = 1080;
+
+		var y = d3.scale.linear()
+		    .range([height, 0]);
+
+		var chart = d3.select(".chart")
+			.attr("width", width)
+			.attr("height", height);
+
+		y.domain([0, d3.max(arr, function(d) { return d.average; })]);
+
+		var barWidth = width / arr.length;
+
+		var bar = chart.selectAll("g")
+		  	.data(arr)
+		  		.enter().append("g")
+		  	.attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
+
+		bar.append("rect")
+			.attr("y", function(d) { return y(d.average); })
+		  	.attr("height", function(d) { return height - y(d.average); })
+		  	.attr("width", barWidth - 1);
+	}
+
+	return {
+		restrict: "EA",
+		template: "<div class='svg-container'><svg class='chart'></svg></div>",
+		scope: { hi: '=' },
+		link: link
+	}
 });
 
 //function to parse data into an object with a unique set of operations
@@ -45,44 +93,38 @@ function parse(res) {
 		arr.push(obj[i]);
 	}
 
-	console.log(arr);
-	console.log(obj);
+	// console.log(arr);
+	// console.log(obj);
 	return arr;
 }
 
-function applyd3() {
-	var width = 5000,
-	    height = 1080;
+// function applyd3() {
+// 	var width = 5000,
+// 	    height = 1080;
 
-	var y = d3.scale.linear()
-	    .range([height, 0]);
+// 	var y = d3.scale.linear()
+// 	    .range([height, 0]);
 
-	var chart = d3.select(".chart")
-		.attr("width", width)
-		.attr("height", height);
+// 	var chart = d3.select(".chart")
+// 		.attr("width", width)
+// 		.attr("height", height);
 
-	y.domain([0, d3.max(arr, function(d) { return d.average; })]);
+// 	y.domain([0, d3.max(arr, function(d) { return d.average; })]);
 
-	var barWidth = width / arr.length;
+// 	var barWidth = width / arr.length;
 
-	var bar = chart.selectAll("g")
-	  	.data(arr)
-	  		.enter().append("g")
-	  	.attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
+// 	var bar = chart.selectAll("g")
+// 	  	.data(arr)
+// 	  		.enter().append("g")
+// 	  	.attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
 
-	bar.append("rect")
-		.attr("y", function(d) { return y(d.average); })
-	  	.attr("height", function(d) { return height - y(d.average); })
-	  	.attr("width", barWidth - 1);
+// 	bar.append("rect")
+// 		.attr("y", function(d) { return y(d.average); })
+// 	  	.attr("height", function(d) { return height - y(d.average); })
+// 	  	.attr("width", barWidth - 1);
+// }
 
-	bar.append("text")
-		.attr("y", function(d) { return y(d.average) + 3; })
-		.attr("x", barWidth / 2)
-			.attr("dy", ".35em")
-		.text(function(d) { return d.average; });
-}
-
-function type(d) {
-	d.average = +d.average; // convert from string to number
-	return d;
-}
+// function type(d) {
+// 	d.average = +d.average; // convert from string to number
+// 	return d;
+// }
