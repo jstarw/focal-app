@@ -36,3 +36,8 @@
 .x.axis path {
   display: none;
 }
+
+.title {
+	text-align: center;
+	margin-top: 30px;
+}
