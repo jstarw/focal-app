@@ -17,7 +17,6 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/d3/d3.min.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -26,27 +25,61 @@
 
         <!-- Add your site or application content here -->
         <div class="container-fluid">
-            <p>
-                How many operations occurred and what is the average value size of said operations?
-                This is an exercise in data manipulation. Using the provided interview.json file, group it by the operation field and calculate an average value. Any language or methodology can be used.
-            </p>
-            <div class='svg-container'>
-                <svg class='chart1'></svg>
+            <div class="jumbotron">
+                <h2>Focal Systems Assessment <small>Jonathan Wen</small></h2>
+                <p>
+                    This web application is built using the HTML5-boilerplate. Angular JS was not used due to a 
+                    number of different reasons. Firstly, since I am not familiar with the framework, it would 
+                    take a long time to learn how to set up the application and ensure the code follows standard 
+                    angular practices.
+                </p>
             </div>
-            <div class='svg-container'>
-                <svg class='chart2'></svg>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Question 1</h2>
+                    <h4>How many operations occurred and what is the average value size of said operations?</h4>
+                    <p>
+                        This is an exercise in data manipulation. Using the provided interview.json file, group it by 
+                        the operation field and calculate an average value. Any language or methodology can be used.
+                    </p>
+                    <div class='svg-container'>
+                        <svg class='chart1'></svg>
+                    </div>
+
+                    <h2>Question 2</h2>
+                    <h4>Are there any notable operations?</h4>
+                    <p>
+                        For the purposes of answering these question, we define a notable operation as one that deviates 
+                        from the mean by a significant amount. Rather than setting a hard value, we will let the user 
+                        navigate the data and decide for him/herself. Plot the grouped data from part 1 using a bar 
+                        chart and place a horizontal line at the mean level. When the mouse is hovered on top of a bar, 
+                        the aggregated value amount should be displayed as a tooltip.  
+                    </p>
+                    <div class='svg-container'>
+                        <svg class='chart2'></svg>
+                    </div>
+
+                    <h2>Question 3</h2>
+                    <h4>What are the locations with the most activity?</h4>
+                    <p>
+                        So far we’ve ignored the location of the transactions. Using two pie charts, plot the total value 
+                        amount for each location and the total number of operations. You can either embed the values 
+                        in the pie slices or use a tooltip. 
+                    </p>
+                    <div class='svg-container'>
+                        <svg class='chart3'></svg>
+                        <svg class='chart4'></svg>
+                    </div>
+                </div>
             </div>
-            <div class='svg-container'>
-                <svg class='chart3'></svg>
-            </div>
-            <a href="#" data-toggle="tooltip" title="Some tooltip text!">Hover over me</a>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
         <script src="js/interactive.js"></script>
+        <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

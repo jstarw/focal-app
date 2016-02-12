@@ -1,23 +1,38 @@
 .svg-container {
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
+	width: 100%;
+	height: 100%;
+	overflow-x: scroll;
+	background-color: #DFF9FF;
+	margin: 15px 0 15px 0;
 }
 
 .chart1 rect, .chart2 rect {
-  fill: steelblue;
+	fill: steelblue;
 }
 
 .chart1 rect:hover, .chart2 rect:hover {
-  fill: brown;
+	fill: brown;
 }
 
 .chart2 .mean-line {
-	stroke:rgb(255,0,0);
-	stroke-width:2;
-
+	stroke:rgb(146,0,0);
+	stroke-width:3;
 }
 
 .chart2 .mean-line:hover {
 	stroke:rgb(0,0,0);
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
 }
