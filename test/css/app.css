@@ -2,8 +2,17 @@
 	width: 100%;
 	height: 100%;
 	overflow-x: scroll;
-	background-color: #DFF9FF;
+	background-color: #F1FDFF;
 	margin: 15px 0 15px 0;
+	text-align: center;
+}
+
+.chart3, .chart4 {
+	margin: 10px;
+}
+
+.chart3 path, .chart4 path {
+	stroke: #fff;
 }
 
 .chart1 rect, .chart2 rect {
@@ -24,17 +33,17 @@
 }
 
 .axis {
-  font: 10px sans-serif;
+	font: 10px sans-serif;
 }
 
 .axis path, .axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
 }
 
 .x.axis path {
-  display: none;
+	display: none;
 }
 
 .title {
