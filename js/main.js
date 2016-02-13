@@ -19,7 +19,7 @@
     //////////////////////////////////////////
     var Questions = {
         q1: function(jsonData) {
-            //create bar graph
+            // initializing optional parameters
             var options = {
                 width: 5000,      height: 600,       margin_top: 20, 
                 margin_right: 20, margin_bottom: 30, margin_left: 40
@@ -33,7 +33,7 @@
         },
 
         q2: function(jsonData) {
-            //create bar graph
+            // initializing optional parameters
             var options = {
                 width: 5000,      height: 600,       margin_top: 20, 
                 margin_right: 20, margin_bottom: 30, margin_left: 40
@@ -53,6 +53,7 @@
         },
 
         q3: function(jsonData) {
+            // initializing optional parameters
             var colorPalette = [
                 '#e69a61', '#9817ff', '#18c61a', '#33b4ff', '#c9167e', 
                 '#297853', '#d7011b', '#7456c7', '#7e6276', '#afb113', 
