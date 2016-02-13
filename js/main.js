@@ -4,7 +4,7 @@
     $(document).ready(function() {
         //store json data globally so all functions can access it
         var jsonData = [];
-        $.get('data/interview.json', function(data){
+        $.get('http://jstarw.github.io/focal-app/data/interview.json', function(data){
             jsonData = data;
             Questions.q1(jsonData);
             Questions.q2(jsonData);
