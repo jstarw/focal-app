@@ -15,6 +15,10 @@
 	stroke: #fff;
 }
 
+.chart3 path:hover, .chart4 path:hover {
+	opacity: 0.8;
+}
+
 .chart1 rect, .chart2 rect {
 	fill: steelblue;
 }

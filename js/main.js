@@ -1,4 +1,5 @@
 'use strict';
+
 (function() {
     $(document).ready(function() {
         //store json data globally so all functions can access it

@@ -40,12 +40,12 @@ var Util = {
             }
         }
 
-        //convert object to array
+        //pushes objects inside obj into array
         var chartData = $.map(obj, function(value, index) {
             value.average = Math.floor(value.total / value.count);
             return [value];
         });
-        console.log(chartData);
+
         return chartData;
     },
 
@@ -79,11 +79,11 @@ var Util = {
             }
         }
 
-        //converting object to array
+        //pushes objects inside obj into array
         var chartData = $.map(obj, function(value, index) {
             return [value];
         });
-        console.log(chartData);
+
         return chartData;
     },
 
@@ -121,7 +121,7 @@ var Util = {
         var chartData = $.map(obj, function(value, index) {
             return [value];
         });
-        console.log(chartData);
+
         return chartData;
     },
 

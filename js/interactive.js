@@ -14,9 +14,5 @@ var Tooltip = {
 	        'container': 'body',
 	        'placement': placement
 	    });
-	},
-
-	changeColourOnHover: function() {
-		
 	}
 }
